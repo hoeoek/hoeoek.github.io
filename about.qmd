@@ -1,8 +1,8 @@
 ---
 title: "About"
-image: profile.jpg
+image: me.jpg
 about:
-  template: jolla
+  template: solana
   # links:
   #   - icon: twitter
   #     text: Twitter
@@ -15,12 +15,12 @@ about:
   #     href: https://github.com
 ---
 
-::: {.callout-note}
+::: callout-note
 This page is currently being worked on. Check back in a few days and it'll hopefully be neater! I kind of promise.
 :::
 
 ## About this blog (and myself)
-I am a PhD student working on leveraging machine learning (aka statistical modeling) to increase competitiveness for bio-based supply chains. It's an exiting time to be researching 
 
+I am a PhD student working on leveraging machine learning (aka statistical modeling) to increase competitiveness for bio-based supply chains. It's an exiting time to be researching
 
 ## Publications

@@ -9,7 +9,7 @@ draft: true
 
 Hello, internet!
 
-In this very first post, I want to totally rush past the part of introducing myself and instead leave that to the [About](../about.markdown) page.
+In this very first post, I want to totally rush past the part of introducing myself and instead leave that to the [About](/about.qmd) page.
 
 Today I will start everything off in a brutal way, using open data about invoices from the municipality of Umeå. I'll be using R to communicate with the API, as well as for some basic data analysis and visualization.
 
