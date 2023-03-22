@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Christian Höök"
+  navbar:
+    search: false
+    left: 
+      - href: about.qmd
+        text: "About"
+      - href: index.qmd
+        text: "Blog"
+    right:
+      - icon: github
+        href: https://github.com/hoeoek
+      - icon: mastodon
+        href: https://c.im/@hoeoek
+      - text: "{{< ai orcid >}}"
+        href: https://orcid.org/0000-0001-6364-811X
+  page-footer: 
+    left: "Copyright 2023, Christian Höök"
+    right: "Made with [Quarto](https://quarto.com)\n[Browse the source code on my GitHub](https://github.com/hoeoek)"
+    border: false
+        
+        
+format:
+  html:
+    theme: Flatly
+    css: styles.css
+    link-external-newwindow: true
+
+editor: visual
+

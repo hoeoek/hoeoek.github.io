@@ -1,0 +1,32 @@
+---
+layout: post
+title: "Resurrecting my butler system"
+categories: random, diy, microcontroller
+draft: true
+---
+
+# Resurrecting my butler system
+
+My house was built in the early 40s by some upper management guy, so naturally there are some quirks related to personal service. Like an old school ChatGPT.
+
+This is a panel in the kitchen. When a button is pressed in a specific room, the corresponding number shows up in the panel, alerting service staff to prepare and serve a Bees Knees.
+
+![](./images/panel.jpg)
+
+Over the years, the buttons in the rooms has disappeared in various renovations, presumably the wiring as well. I wanted to bring the functionality back using some kind of modern IoT solution, but making it invisible.
+
+## Figuring out how the panel works
+
+Electromagnets are used to push a small counterweight, allowing the number to fall down. Tracing the power cable from the panel back to my electricity central, it reveals a 12V transformer.
+
+However, being fairly rudamentary technology, maybe the electromagnets would allow the numbers to fall using less then 12V - which would be great as i would maybe not need any relays between the microcontroller and the panels electromagnets.
+
+## Gear used
+
+### Hardware
+
+My indended purchase list for this project included: \* Raspberry Pi Pico W - Microcontroller for recieving signals from the room buttons \* Relays - To transfer low current signals from the Pico to the electromagnets in the panel \* buttons - To place in rooms
+
+### Software
+
+-   Micropython -

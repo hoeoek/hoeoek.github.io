@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "First post!"
+categories: random umeå osint 
+draft: true
+---
+
+# Scripting on the go
+
+I admit to suffer from the occasional and rootless need to get new gadgets - commonly known as GAS (Gear Aquisition Syndrome). This also translate into softer values as well, such as interests and know-how. Since I have an ipad (due to a fit of above mentioned syndrome), naturally i want to be able to use it as tool in every way possible. I originally got it early in my PhD to use as a notetaking tool and to store, read, and annotate my ever expanding reference library. Fast forward a couple of years, I've learned that nothing beats a piece of paper you can pin to the wall and stare at. I also had my first kid and bought a new house, meaning my ambitious plan to use this wonderful piece of wonder sent from the tech gods to get me one step closer to becoming the productive cyborg i was born to be was of course scrapped in favor of using the ipad as a soup cookbook (no, thats not geek lingo) and yet another interface for consuming bull\$hit tv shows to keep my attention focused elsewhere but the harsh reality of climate crisis, the pandemic, and the war in Ukraine. But I digress.
