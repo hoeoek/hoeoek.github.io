@@ -11,7 +11,7 @@ My house was built in the early 40s by some upper management guy, so naturally t
 
 This is a panel in the kitchen. When a button is pressed in a specific room, the corresponding number shows up in the panel, alerting service staff to prepare and serve a Bees Knees.
 
-![](./images/panel.jpg)
+
 
 Over the years, the buttons in the rooms has disappeared in various renovations, presumably the wiring as well. I wanted to bring the functionality back using some kind of modern IoT solution, but making it invisible.
 

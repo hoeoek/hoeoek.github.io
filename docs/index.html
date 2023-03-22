@@ -72,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="random,beer,rstats,gis" data-listing-file-modified-sort="1679495148237" data-listing-reading-time-sort="4.155">
+<div class="quarto-post image-right" data-index="0" data-categories="random,beer,rstats,gis" data-listing-date-sort="1678834800000" data-listing-file-modified-sort="1679519408996" data-listing-reading-time-sort="4.16">
 <div class="thumbnail">
 <p><a href="./posts/first_post_beer_label/index.html"> <img src="./posts/first_post_beer_label/beer_label.png" class="thumnail-image"> </a></p>
 </div>
@@ -177,7 +177,11 @@ This is my first post on this blog. The blog will focus on and data science usin
 </a>
 </div>
 <div class="metadata">
-<a href="./posts/first_post_beer_label/index.html"> </a>
+<a href="./posts/first_post_beer_label/index.html">
+<div class="listing-date">
+Mar 15, 2023
+</div>
+</a>
 </div>
 </div>
 </div>

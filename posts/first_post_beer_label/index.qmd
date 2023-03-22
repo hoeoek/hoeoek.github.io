@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "First Post: Beer Label"
+date: "2023-03-15"
 categories: [random, beer, rstats, gis]
 ---
 
@@ -10,16 +11,13 @@ This is my first post on this blog. The blog will focus on and data science usin
 
 In this post I'll share some R code for creating this map-style minimalist beer label:
 
-![](beer_label.png){fig-align="center" width=40%}
-
+![](beer_label.png){fig-align="center" width="40%"}
 
 ## Let's do it
-
 
 ::: callout-note
 This is a work in progress, check back in a few days for a more polished post!
 :::
-
 
 Let's load some libraries:
 
@@ -37,12 +35,7 @@ library(osmdata) # For downloading data from OpenStreetMap
 library(sf) # For working with simple features, such as map stuff
 ```
 
-This beer label will use the road layout for the city of Umeå in the north of Sweden. `osmdata` has some great functions for this. 
-- `getbb()` returns the bounding box (coordinates of the 4 corners of a rectangle) associated with a geographical area.
-- `opq()` builds the database query.
-- `add_osm_features()` adds, you've guessed it, our desired features to the query. 
-- `osmdata_sf()` Turns the results of the query into **sf** format.
-
+This beer label will use the road layout for the city of Umeå in the north of Sweden. `osmdata` has some great functions for this. - `getbb()` returns the bounding box (coordinates of the 4 corners of a rectangle) associated with a geographical area. - `opq()` builds the database query. - `add_osm_features()` adds, you've guessed it, our desired features to the query. - `osmdata_sf()` Turns the results of the query into **sf** format.
 
 I'll use `highway` features this time, but [check Open Street Maps wiki](https://wiki.openstreetmap.org/wiki/Map_features#Highway) for other features.
 
@@ -78,7 +71,7 @@ streets <- bbx %>%
   pluck("osm_lines") 
 ```
 
-Inthis case I made the map-part of the label have a circular shape, with its center being somewhere downtown Umeå.  I'll get the coordinates non-programmatically (lazy) from just right clicking in Google Maps. Google Maps and OSM use the same coordinate system and projection, so the data smoothly slips into the processing pipeline without any conversion. Happy days.
+Inthis case I made the map-part of the label have a circular shape, with its center being somewhere downtown Umeå. I'll get the coordinates non-programmatically (lazy) from just right clicking in Google Maps. Google Maps and OSM use the same coordinate system and projection, so the data smoothly slips into the processing pipeline without any conversion. Happy days.
 
 Since this is "just" a beer label, I won't bother too much about dealing with projections - I'll stick to WGS84/ESPG4326 which should produce good enough visual results.
 
