@@ -3,6 +3,7 @@ title: "About this blog"
 image: me.jpg
 about:
   template: solana
+  image-shape: round
   # links:
   #   - icon: twitter
   #     text: Twitter
