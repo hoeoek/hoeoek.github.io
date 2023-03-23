@@ -19,8 +19,6 @@ about:
 This page is currently being worked on. Check back in a few days and it'll hopefully be neater!
 :::
 
-## About this blog (and myself)
-
 I am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains.
 
 ## Publications
