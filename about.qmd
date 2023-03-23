@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About this blog"
 image: me.jpg
 about:
   template: solana
@@ -16,11 +16,21 @@ about:
 ---
 
 ::: callout-note
-This page is currently being worked on. Check back in a few days and it'll hopefully be neater! I kind of promise.
+This page is currently being worked on. Check back in a few days and it'll hopefully be neater!
 :::
 
 ## About this blog (and myself)
 
-I am a PhD student working on leveraging machine learning (aka statistical modeling) to increase competitiveness for bio-based supply chains. It's an exiting time to be researching
+I am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains.
 
 ## Publications
+
+Höök (2022). *Supply and Command: Quantitative Methods for Risk Management and Resilience in Wood Supply.* Proceedings of The Joint 44th Annual Meeting of Council on Forest Engineering, the 54th International Symposium on Forest Mechanization. COFE;FORMEC. October 4-7, Corvallis, Oregon. ISBN: 979-8-9855282-1-3
+
+Bergstrom et al. (2022). *Effects of boom-corridor thinning on harvester productivity and residual stand structure.* International Journal of Forest Engineering, 33. <https://doi.org/10.1080/14942119.2022.2058258>
+
+Höök (2020). *Unmanned aerial vehicle photography and photogrammetry in the Smallwood project.* (SmallWood report, November 2020). <https://www.smallwood.eu/wp-content/uploads/sites/4/2021/01/SmallWood-Drone-Report_Christian_Hook.pdf> \[2023-02-18\]
+
+Höök (2020). *Promotional video of Smallwood project* \[Video\]. <https://www.youtube.com/watch?v=vkZ1UI9yZeo> \[2022-03-14\]
+
+Höök et al. (2020). *A Method of Finding HCT Roundwood Corridors for Reduction of GHG Emissions and Fuel Costs in Sweden.* Forests, 11(2). <https://doi.org/10.3390/f11020220>
