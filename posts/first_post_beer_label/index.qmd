@@ -7,13 +7,11 @@ categories: [random, beer, rstats, gis]
 
 # Hello World! ...and hello beer labels!
 
-This is my first post on this blog. The blog will focus on and data science using the R programming language, but I will also write about other things that I find interesting. One of these things are beer, more specifically brewing beer and what comes along with it. I have been brewing beer for a few years now and to make them feel more like the real deal, I like to design my own labels.
+In this very first post, I want to totally rush past the part of introducing myself and instead leave that to the [About](/about.qmd) page. However, while the blog will be focused on data science, occasionally other things that I find interesting will sneak in. One of these things is beer, more specifically brewing beer - and what comes along with it. I have been brewing for a few years now and to make them feel a little more like the real deal, I like to design my own labels.
 
-In this post I'll share some R code for creating this map-style minimalist beer label:
+In this post I'll share some R code for creating this map-style minimalist beer label that i recently used for a batch of IPA:
 
 ![](beer_label.png){fig-align="center" width="40%"}
-
-## Let's do it
 
 ::: callout-note
 This is a work in progress, check back in a few days for a more polished post!
@@ -21,7 +19,7 @@ This is a work in progress, check back in a few days for a more polished post!
 
 ## Libraries
 
-`tidyverse` is the metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful `magrittr` pipe operator (`%>%`). `osmdata` is a wrapper for communicating with the Open Street Map API, and `sf` turns R into a geographic information system (GIS).
+`tidyverse` is the R metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful `magrittr` pipe operator (`%>%`). `osmdata` is a wrapper for communicating with the Open Street Map API, and `sf` turns R into a geographic information system (GIS).
 
 ```{r, include=FALSE}
 library(tidyverse) # The go-to library for basically doing anything in R nowadays

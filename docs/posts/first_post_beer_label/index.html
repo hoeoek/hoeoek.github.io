@@ -216,15 +216,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="hello-world-and-hello-beer-labels" class="level1">
 <h1>Hello World! …and hello beer labels!</h1>
-<p>This is my first post on this blog. The blog will focus on and data science using the R programming language, but I will also write about other things that I find interesting. One of these things are beer, more specifically brewing beer and what comes along with it. I have been brewing beer for a few years now and to make them feel more like the real deal, I like to design my own labels.</p>
-<p>In this post I’ll share some R code for creating this map-style minimalist beer label:</p>
+<p>In this very first post, I want to totally rush past the part of introducing myself and instead leave that to the <a href="../../about.html">About</a> page. However, while the blog will be focused on data science, occasionally other things that I find interesting will sneak in. One of these things is beer, more specifically brewing beer - and what comes along with it. I have been brewing for a few years now and to make them feel a little more like the real deal, I like to design my own labels.</p>
+<p>In this post I’ll share some R code for creating this map-style minimalist beer label that i recently used for a batch of IPA:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="beer_label.png" class="img-fluid figure-img" style="width:40.0%"></p>
 </figure>
 </div>
-<section id="lets-do-it" class="level2">
-<h2 class="anchored" data-anchor-id="lets-do-it">Let’s do it</h2>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -238,10 +236,9 @@ Note
 <p>This is a work in progress, check back in a few days for a more polished post!</p>
 </div>
 </div>
-</section>
 <section id="libraries" class="level2">
 <h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
-<p><code>tidyverse</code> is the metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful <code>magrittr</code> pipe operator (<code>%&gt;%</code>). <code>osmdata</code> is a wrapper for communicating with the Open Street Map API, and <code>sf</code> turns R into a geographic information system (GIS).</p>
+<p><code>tidyverse</code> is the R metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful <code>magrittr</code> pipe operator (<code>%&gt;%</code>). <code>osmdata</code> is a wrapper for communicating with the Open Street Map API, and <code>sf</code> turns R into a geographic information system (GIS).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># The go-to library for basically doing anything in R nowadays</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(osmdata) <span class="co"># For downloading data from OpenStreetMap</span></span>

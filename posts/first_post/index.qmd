@@ -5,8 +5,6 @@ categories: [api, umeå, osint]
 draft: true
 ---
 
-
-
 Hello, internet!
 
 In this very first post, I want to totally rush past the part of introducing myself and instead leave that to the [About](/about.qmd) page.
