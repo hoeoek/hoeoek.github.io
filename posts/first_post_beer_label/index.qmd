@@ -19,9 +19,9 @@ In this post I'll share some R code for creating this map-style minimalist beer 
 This is a work in progress, check back in a few days for a more polished post!
 :::
 
-Let's load some libraries:
+## Libraries
 
-`tidyverse` is the metapackage to rule them all and includes a bunch of packages super useful for data wrangling. It also loads the wonderful `magrittr` pipe operator (`%>%`):love:
+`tidyverse` is the metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful `magrittr` pipe operator (`%>%`). `osmdata` is a wrapper for communicating with the Open Street Map API, and `sf` turns R into a geographic information system (GIS).
 
 ```{r, include=FALSE}
 library(tidyverse) # The go-to library for basically doing anything in R nowadays
@@ -35,11 +35,21 @@ library(osmdata) # For downloading data from OpenStreetMap
 library(sf) # For working with simple features, such as map stuff
 ```
 
-This beer label will use the road layout for the city of Umeå in the north of Sweden. `osmdata` has some great functions for this. - `getbb()` returns the bounding box (coordinates of the 4 corners of a rectangle) associated with a geographical area. - `opq()` builds the database query. - `add_osm_features()` adds, you've guessed it, our desired features to the query. - `osmdata_sf()` Turns the results of the query into **sf** format.
+## Features of interest
+
+This beer label will use the road layout for the city of Umeå in the north of Sweden. `osmdata` has some great functions for this.
+
+-   `getbb()` returns the bounding box (coordinates of the 4 corners of a rectangle) associated with a geographical area.
+
+-   `opq()` builds the database query.
+
+-   `add_osm_features()` adds, you've guessed it, our desired features to the query.
+
+-   `osmdata_sf()` Turns the results of the query into `sf` format.
 
 I'll use `highway` features this time, but [check Open Street Maps wiki](https://wiki.openstreetmap.org/wiki/Map_features#Highway) for other features.
 
-I'll separate the roads and streets into two `sf` classes to be able to draw them using different line widths on the label. The output of `osmdata_sf()` will contain more than we need, so we extract just the line features using `purrr::pluck()`
+I'll separate the roads and streets into two `sf` features to be able to draw them using different line widths on the label. The output of `osmdata_sf()` will contain more than we need, so we extract just the line features using `purrr::pluck()`
 
 ```{r}
 #choose area
@@ -71,7 +81,9 @@ streets <- bbx %>%
   pluck("osm_lines") 
 ```
 
-Inthis case I made the map-part of the label have a circular shape, with its center being somewhere downtown Umeå. I'll get the coordinates non-programmatically (lazy) from just right clicking in Google Maps. Google Maps and OSM use the same coordinate system and projection, so the data smoothly slips into the processing pipeline without any conversion. Happy days.
+## Plotting the label
+
+In this case I made the map-part of the label have a circular shape, with its center being somewhere downtown Umeå. I'll get the coordinates non-programmatically (lazy) from just right clicking in Google Maps. Google Maps and OSM use the same coordinate system and projection, so the data smoothly slips into the processing pipeline without any conversion. Happy days.
 
 Since this is "just" a beer label, I won't bother too much about dealing with projections - I'll stick to WGS84/ESPG4326 which should produce good enough visual results.
 
@@ -87,24 +99,32 @@ circle <- tibble(lat = center["lat"], long = center["long"]) %>%
 
 Now we populate the circle with some roadage:
 
-```{r}
+```{r, warning=FALSE}
 roads_in_circle <- st_intersection(circle, roads)
 streets_in_circle <- st_intersection(circle, streets)
 ```
 
-And plot our simple beer label:
+And plot our simple beer label using `ggplot2`:
 
 ```{r}
 ggplot() +
+  
+  # create the thinner streets
   geom_sf(data = streets_in_circle,
           linewidth = 0.3,
           colour = "gray30") +
+  
+  # create the thicker streets
   geom_sf(data = roads_in_circle,
           linewidth = 0.5,
           colour = "gray10") +
+  
+  # Set some labels
   labs(title = "UmeIPA",
        caption = "Northern Made | Dry-Hopped") +
-  theme_void() +
+  theme_void() + # remove plot objects (x & y axis etc)
+  
+  # Theme our text to make it look fancier
   theme(
     plot.title = element_text(
       family = "mono",
