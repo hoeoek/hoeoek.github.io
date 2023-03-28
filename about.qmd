@@ -2,7 +2,7 @@
 title: "About this blog"
 image: me.jpg
 about:
-  template: solana
+  template: solana #trestles
   image-shape: round
   # links:
   #   - icon: twitter
@@ -15,10 +15,6 @@ about:
   #     text: Github
   #     href: https://github.com
 ---
-
-::: callout-note
-This page is currently being worked on. Check back in a few days and it'll hopefully be neater!
-:::
 
 I am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains. With a strong background in forestry, I have honed my skills in statistical modeling in R and have contributed to research projects, providing data analysis and drone photogrammetry support. My teaching experience includes instructing master-level students in a forestry program, where I shared my passion for data-driven solutions towards enhancing supply chain resilience.
 
