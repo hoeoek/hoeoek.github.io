@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts/citizen_audit/index.html",
+    "href": "posts/citizen_audit/index.html",
+    "title": "An OSINT approach to citizen audit",
+    "section": "",
+    "text": "In this post we will have a look at consuming some open data to try to get more enlightened about how a local municipality is run. Sweden is a fairly decent country when it comes to making sure taxpayer money are allocated properly, but every citizens should exercise their right to audit their government whenever possible! You know… just to keep them on their toes.\nUmeå has its own open REST API service where you can find all sorts of data about and from the municipality. It is very well structured and even has a lot of functionality to do some analysis right in the browser. Since we are in love with R, we will skip that and go straight for some .csv-files. I found a some datasets with incoming supplier invoices, which I thought would be an interesting subject for a swift exploratory data analysis.\nDirect links to the .csv’s: 2017, 2018, 2019, 2020, 2021, 2022"
+  },
+  {
+    "objectID": "posts/citizen_audit/index.html#exploring-cleaning-the-data",
+    "href": "posts/citizen_audit/index.html#exploring-cleaning-the-data",
+    "title": "An OSINT approach to citizen audit",
+    "section": "Exploring & cleaning the data:",
+    "text": "Exploring & cleaning the data:\nLibraries:\n\nlibrary(tidyverse)\n\nReading and binding together the data into a tibble:\n\ninvoices_raw <- \n  bind_rows(\n    read.csv2(\"leverantorsfakturor-2017.csv\"),\n    read.csv2(\"leverantorsfakturor-2018.csv\"),\n    read.csv2(\"leverantorsfakturor-2019.csv\"),\n    read.csv2(\"leverantorsfakturor-2020.csv\"),\n    read.csv2(\"leverantorsfakturor-2021.csv\"),\n    read.csv2(\"leverantorsfakturor-2022.csv\")\n  ) %>% \n  \n  # Use tibbles because they are awesome\n  tibble() %>% \n  \n  # clean variable names ( <3 janitor!)\n  janitor::clean_names() %>% \n  \n  # select variables of interest & proper classes\n  transmute(\n    across(c(financial_month, \n             verification_number),\n           as.character),\n    across(c(department,\n             supplier,\n             account_text), \n           as.factor),\n    amount = as.numeric(amount))\n\nidentify any duplicates\n\n\nCode\ninvoices_raw %>% \n  filter(duplicated(.)) %>% nrow()\n\n\n[1] 28115\n\n\nIt turns out the dataset has some duplicate records. I’ll put that in the “human error” box and move on, deleting the duplicates. We can also get rid of the verification_number variable.\nLet’s see what we’re working with:\n\n\nCode\ninvoices_clean <- \n  invoices_raw %>% \n  distinct() %>% \n  select(-verification_number)\n\ninvoices_clean %>% skimr::skim_without_charts()\n\n\n\nData summary\n\n\nName\nPiped data\n\n\nNumber of rows\n1982831\n\n\nNumber of columns\n5\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n1\n\n\nfactor\n3\n\n\nnumeric\n1\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nfinancial_month\n0\n1\n6\n6\n0\n72\n0\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\ndepartment\n0\n1\nFALSE\n19\nTek: 778107, För: 317385, Äld: 257629, Ind: 245531\n\n\nsupplier\n0\n1\nFALSE\n9786\nMar: 126590, TEL: 124618, Ume: 110612, Grö: 77794\n\n\naccount_text\n0\n1\nFALSE\n322\nLiv: 417406, Mob: 118767, Övr: 111842, Elf: 93683\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\namount\n0\n1\n11901.59\n393866.1\n-137600000\n220\n720\n2464.8\n156978099\n\n\n\n\n\nTurns out, the municipality recieved almost 2 million invoices in these six years. That’s quite impressive.\nlooking at skimr output, the invoice amounts looks wierd - let’s plot it and take a look!\n\ninvoices_clean %>% \n  ggplot(aes(amount))+\n  geom_histogram(bins = 50) +\n  scale_x_log10(label = scales::number_format()) +\n  scale_y_continuous(labels = scales::number_format())\n\nWarning in self$trans$transform(x): NaNs produced\n\n\nWarning: Transformation introduced infinite values in continuous x-axis\n\n\nWarning: Removed 83923 rows containing non-finite values (`stat_bin()`)."
+  },
+  {
     "objectID": "posts/first_post_beer_label/index.html",
     "href": "posts/first_post_beer_label/index.html",
     "title": "First Post: Beer Label",
@@ -11,21 +25,21 @@
     "href": "index.html",
     "title": "Christian Höök",
     "section": "",
-    "text": "First Post: Beer Label\n\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "An OSINT approach to citizen audit\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2023\n\n\nChristian\n\n\n\n\n\n\n  \n\n\n\n\nFirst Post: Beer Label\n\n\n\n\n\n\n\n\n\n\n\n\nMar 21, 2023\n\n\nChristian\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About this blog",
     "section": "",
-    "text": "Note\n\n\n\nThis page is currently being worked on. Check back in a few days and it’ll hopefully be neater!\nI am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains."
+    "text": "Note\n\n\n\nThis page is currently being worked on. Check back in a few days and it’ll hopefully be neater!\nI am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains. With a strong background in forestry, I have honed my skills in statistical modeling in R and have contributed to research projects, providing data analysis and drone photogrammetry support. My teaching experience includes instructing master-level students in a forestry program, where I shared my passion for data-driven solutions towards enhancing supply chain resilience.\nI believe in the power of open-source technologies to democratize access to essential tools and data, allowing for more effective and inclusive decision-making in the bio-based industry and beyond."
   },
   {
-    "objectID": "about.html#about-this-blog-and-myself",
-    "href": "about.html#about-this-blog-and-myself",
+    "objectID": "about.html#toolkit",
+    "href": "about.html#toolkit",
     "title": "About this blog",
-    "section": "About this blog (and myself)",
-    "text": "About this blog (and myself)\nI am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains."
+    "section": "Toolkit",
+    "text": "Toolkit\n\nR (Tidyverse, Tidymodels)\nPython\nGIS\nDocker\nQuarto"
   },
   {
     "objectID": "about.html#publications",

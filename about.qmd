@@ -20,7 +20,17 @@ about:
 This page is currently being worked on. Check back in a few days and it'll hopefully be neater!
 :::
 
-I am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains.
+I am a PhD student working on leveraging machine learning to increase competitiveness for bio-based supply chains. With a strong background in forestry, I have honed my skills in statistical modeling in R and have contributed to research projects, providing data analysis and drone photogrammetry support. My teaching experience includes instructing master-level students in a forestry program, where I shared my passion for data-driven solutions towards enhancing supply chain resilience.
+
+I believe in the power of open-source technologies to democratize access to essential tools and data, allowing for more effective and inclusive decision-making in the bio-based industry and beyond.
+
+## Toolkit
+
+-   R (Tidyverse, Tidymodels)
+-   Python
+-   GIS
+-   Docker
+-   Quarto
 
 ## Publications
 

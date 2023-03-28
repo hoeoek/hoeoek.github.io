@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/citizen_audit/index.html",
       "/posts/first_post_beer_label/index.html"
     ]
   }

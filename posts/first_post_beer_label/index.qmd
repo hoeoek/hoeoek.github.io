@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "First Post: Beer Label"
-date: "2023-03-15"
+author: Christian
+date: "2023-03-21"
 categories: [random, beer, rstats, gis]
 ---
 

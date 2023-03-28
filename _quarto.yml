@@ -20,7 +20,7 @@ website:
         href: https://orcid.org/0000-0001-6364-811X
   page-footer: 
     left: "Copyright 2023, Christian Höök"
-    right: "Made with [Quarto](https://quarto.com)<br>[Browse the source code on GitHub](https://github.com/hoeoek)"
+    right: "Made with [Quarto](https://quarto.com) | [Browse the source code on GitHub](https://github.com/hoeoek)"
     border: false
         
         
