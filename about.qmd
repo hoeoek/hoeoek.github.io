@@ -25,8 +25,10 @@ I believe in the power of open-source technologies to democratize access to esse
 -   R (Tidyverse, Tidymodels)
 -   Python
 -   GIS
+-   GIT
 -   Docker
 -   Quarto
+-   AWS
 
 ## Publications
 
