@@ -12,7 +12,7 @@ image: pretty_plot.png
 
 in this post I show how I usually go about prettifying a simple graph. I find small adjustments to really enhance the eye-grabbyness of a plot, and could make all the difference at a conference poster session or presentation - as well as in a journal submission!
 
-![](ugly_plot.png){width="355"} ![](darn_good.png){width="289"}
+![](ugly_plot.png){width="355"} >>> ![](darn_good.png){width="289"}
 
 Libraries used:
 
