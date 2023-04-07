@@ -239,8 +239,6 @@ p2 <-
 I love colors like this! Now to put it all together using `patchwork`:
 
 ```{r}
-#| fig-width: 100
-#| fig-height: 100
 #| warning: false
 p1 + p2 +
   plot_annotation(title = "Production of Primary Forest Fuels (PFF) in Sweden",
