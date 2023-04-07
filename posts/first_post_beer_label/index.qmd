@@ -14,7 +14,6 @@ In this post I'll share some R code for creating this map-style minimalist beer 
 
 ![](beer_label.png){fig-align="center" width="40%"}
 
-
 ## Libraries
 
 `tidyverse` is the R metapackage to rule them all and includes a bunch of packages that are super useful for data wrangling. It also loads the wonderful `magrittr` pipe operator (`%>%`). `osmdata` is a wrapper for communicating with the Open Street Map API, and `sf` turns R into a geographic information system (GIS).
