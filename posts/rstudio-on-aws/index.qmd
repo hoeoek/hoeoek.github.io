@@ -24,14 +24,14 @@ AWS is kind enough to get beginners up to speed with their services by providing
 
 Lets get this out of the way. In order to securely connect to your cloud resource, you need to generate SSH keypairs for authentication between the client (your computer) and the virtual machine instance (the aws server). There are of course several ways to do this, including being more or less secure about it, but the easiest way is to generate the key pair on your local machine ussing `ssh-keygen`:
 
-```{{sh}}
+```sh
 # Generate SSH keypair, accepting the defaults with enter
 ssh-keygen 
 ```
 
 Copy the public key:
 
-```{{sh}}
+```sh
 # Show your public key
 cat .ssh/<nameofkey>.pub
 ```
@@ -64,7 +64,7 @@ Next issue, since we've used SSH keypair authentication for the EC2 instance, we
 Keep in mind that anyone may stumble across your RStudio web login form, so choose a strong user and password combination! Also take a second to ponder the user permissions so any evil redteamers can't cause to much trouble on your cloud system.
 :::
 
-```{{ssh}}
+```sh
 # add user "rstudio-user" and create a home dir for it
 sudo useradd -m rstudio-user 
 
@@ -80,15 +80,15 @@ sudo usermod -aG rstudio-group rstudio-user
 
 Basic security:
 
-```{{sh}}
+```sh
 # Disable shell access for rstudio-user
 sudo usermod -s /bin/false rstudio-user
 ```
 
 also, open the RStudio config file with `sudo nano /etc/rstudio/rserver.conf` and add these lines:
 
-``` {{sh filename="rserver.conf"}}
-# Only authorise users in the rstudio-group to access rstudio
+```sh
+# Only authorize users in the rstudio-group to access rstudio
 auth-required-user-group=rstudio-group
 
 # Limit the number of concurrent sessions
@@ -97,7 +97,7 @@ max-sessions-per-user=2
 
 And restart the server
 
-```{{sh}}
+```sh
 sudo systemctl restart rstudio-server
 ```
 
