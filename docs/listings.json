@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/rstudio-on-aws/index.html",
       "/posts/prettifying_simple_graph/index.html",
       "/posts/first_post_beer_label/index.html"
     ]
