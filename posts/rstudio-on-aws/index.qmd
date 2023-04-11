@@ -1,9 +1,9 @@
 ---
 layout: post
+title: "RStudio Server on AWS"
 author: Christian
 date: "2023-04-02"
 categories: [rstats, aws, cloud]
-draft: false
 ---
 
 Going digitally nomad is a dream for everyone, right? For the data scientist or ML operative, being able to get the work done no matter the location increase the resilience of any project. In addition, being able to leave that beefy workstation behind without sacrificing compute performance or tool availability is a game changer. Suddenly you're tuning huge ensamble models using your phone in the back of a taxi, or doing EDA of a massive dataset using an ipad on an Italian roof terrace. Aside from personal convenience, I assume its better in terms of climate footprint to share resources with others in an ad hoc fashion instead of having everyone sitting around with tons of compute redundancies.
