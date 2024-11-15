@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Training a Forester: A Journey into synthetic data generation, axolotls, and unemployment"
+author: Christian
+date: "2024-11-14"
+categories: [ml, python, cloud, llm]
+---
+
+# Domain expertise
+
+As a forester, I have aquired some domain expertise regarding the growth of trees and how to cut them down in a sustainable manner. Sustainable here encompasses both the environment and the economy, as well as the social aspects of forestry. Great knowledge to have, especially in a country like Sweden, where more than 80% of the country is covered by forests.
+
+For me, it took 5 years of university studies to learn how to take care of forests. Would it not be great if we could teach computers to have the same knowledge, but with a fraction of the time, cost, and effort? Then every forest owner could have a little AI forester in their pocket, like a tamagotchi but with less fear of killing it off due to negligence.
+
+[Skogsskötselserien](https://www.skogsstyrelsen.se/Skogsskotselserien), a series of publications on forest management published by the Swedish Forest Agency in collaboration with experts and scientists, is a great resource for learning about forestry. Combine it with The Forestry Act (Skogsvårdslagen), which is the Swedish law on forestry, and I would say that we'd have a pretty good idea of forestry.
+
+Training machine learning models has become surprisingly easy over the last few years. The open source community has made it possible to train large language models (LLMs)with minimal effort, so that is what we'll be doing today.
+
+
+# Synthetic data augmentation
+
+In order to train our chatbot LLM, we need a dataset of questions and answers to train on. We will be using the sources mentioned above to create a dataset of questions and answers, which is a format needed to make what really is a next-word prediction generator into something you can talk to. By using the Q&A format, we effectivly prepare the LLM to be able to answer questions about forestry by providing it with examples to learn from.
+
+Our raw data input contains slightly less then 500´000 words, which should at least let us fine-tune a small LLM. In our case, we'll be training a QLORA, using a single GPU rented from the cloud provider [Vast.ai](https://vast.ai/).
+
+
+
+
+
